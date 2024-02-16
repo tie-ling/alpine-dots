@@ -1,4 +1,7 @@
-rc-update add seatd
+setup-devd udev
+sed -i 's|#||' /etc/apk/repositories 
+
+rc-update add seatd boot
 rc-update add elogind
 rc-update add consolefont boot
 rc-update add greetd
