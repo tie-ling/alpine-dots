@@ -1,0 +1,13 @@
+rc-update add seatd
+rc-update add elogind
+rc-update add consolefont boot
+rc-update add greetd
+rc-update add brightnessctl
+rc-update add consolefont boot
+rc-update add zram-init boot
+rc-update add tlp
+rc-update add i2pd
+rc-update add yggdrasil
+rc-update add alsa
+# rm unencrypted swap
+rc-update del swap boot

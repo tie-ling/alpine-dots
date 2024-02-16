@@ -1,0 +1,10 @@
+account gmail
+from gyuchen86@gmail.com
+host smtp.gmail.com
+passwordeval cat /home/yc/email-pass.txt
+port 465
+tls on
+tls_starttls off
+tls_trust_file /etc/ssl/certs/ca-certificates.crt
+user gyuchen86@gmail.com
+account default:gmail

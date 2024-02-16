@@ -1,0 +1,13 @@
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+Host imap.gmail.com
+PassCmd cat /home/yc/email-password.txt
+Port 993
+SSLType IMAPS
+User gyuchen86@gmail.com
+
+IMAPStore gmail-remote
+Account gmail
+
+MaildirStore gmail-local
+Path /home/yc/Mail/gmail/
+SubFolders Verbatim
