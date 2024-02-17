@@ -18,7 +18,7 @@ dosfstools
 e2fsprogs
 elogind
 emacs-doc
-emacs-nox
+emacs-pgtk
 eudev
 firefox
 font-dejavu
@@ -60,6 +60,7 @@ openssl
 pass
 pass-otp
 pavucontrol
+pinentry-qt
 pipewire
 pipewire-pulse
 pipewire-tools
