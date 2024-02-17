@@ -1,5 +1,19 @@
 {
     "policies": {
+	"3rdparty": {
+	    "Extensions": {
+		"uBlock0@raymondhill.net": {
+		    "adminSettings": {
+			"dynamicFilteringString": "* * inline-script block\n* * 1p-script block\n* * 3p-script block\n* * 3p-frame block",
+			"hostnameSwitchesString": "no-cosmetic-filtering: * true\nno-remote-fonts: * true\nno-csp-reports: * true\nno-scripting: * true\n",
+			"userSettings": {
+			    "advancedUserEnabled": true,
+			    "popupPanelSections": 31
+			}
+		    }
+		}
+	    }
+	},
 	"SearchSuggestEnabled": false,
 	"DisableBuiltinPDFViewer": true,
 	"DisableFirefoxAccounts": true,
@@ -11,6 +25,61 @@
         "NoDefaultBookmarks": true,
         "OverrideFirstRunPage": "",
         "OverridePostUpdatePage": "",
+
+	"Preferences": {
+	    "browser.aboutConfig.showWarning": {
+		"Status": "default",
+		"Value": false
+	    },
+	    "browser.backspace_action": {
+		"Status": "default",
+		"Value": 0
+	    },
+	    "browser.chrome.site_icons": {
+		"Status": "default",
+		"Value": false
+	    },
+	    "browser.display.use_document_fonts": {
+		"Status": "default",
+		"Value": 0
+	    },
+	    "browser.tabs.firefox-view": {
+		"Status": "default",
+		"Value": false
+	    },
+	    "browser.tabs.inTitlebar": {
+		"Status": "default",
+		"Value": 0
+	    },
+	    "browser.uidensity": {
+		"Status": "default",
+		"Value": 1
+	    },
+	    "dom.security.https_only_mode": {
+		"Status": "default",
+		"Value": true
+	    },
+	    "general.smoothScroll": {
+		"Status": "default",
+		"Value": false
+	    },
+	    "gfx.font_rendering.opentype_svg.enabled": {
+		"Status": "default",
+		"Value": false
+	    },
+	    "media.ffmpeg.vaapi.enabled": {
+		"Status": "default",
+		"Value": true
+	    },
+	    "media.navigator.mediadatadecoder_vpx_enabled": {
+		"Status": "default",
+		"Value": true
+	    },
+	    "network.IDN_show_punycode": {
+		"Status": "default",
+		"Value": true
+	    }
+	},
 
         "Homepage": {
             "URL": "about:home",
@@ -27,108 +96,6 @@
             "Locked": false
         },
 
-        "SearchEngines": {
-            "Default": "DuckDuckGo",
-            "Remove": [
-                "1&1 Suche",
-                "Allaannonser",
-                "Allegro",
-                "Am Faclair Beag",
-                "Amazon.ca",
-                "Amazon.co.jp",
-                "Amazon.co.uk",
-                "Amazon.com",
-                "Amazon.com.au",
-                "Amazon.de",
-                "Amazon.es",
-                "Amazon.fr",
-                "Amazon.in",
-                "Amazon.it",
-                "Amazon.nl",
-                "Amazon.se",
-                "Atlas",
-                "Azerdict",
-                "Azet",
-                "BBC ┐ BBC Alba",
-                "Bing",
-                "Ceneje.si",
-                "Chambers (UK)",
-                "Cốc Cốc",
-                "DIEC2",
-                "Diccionario RAE",
-                "EUdict Eng->Cro",
-                "Ecosia",
-                "Encyklopedia PWN",
-                "Freelang (br)",
-                "GMX - Búsqueda web",
-                "GMX - Recherche web",
-                "GMX Search",
-                "GMX Shopping",
-                "GMX Suche",
-                "Google",
-                "Gule sider",
-                "Heureka",
-                "Hotline",
-                "Kannada Store",
-                "LEO Eng-Deu",
-                "List.am",
-                "Mapy.cz",
-                "Marktplaats.nl",
-                "MercadoLibre Argentina",
-                "MercadoLibre Chile",
-                "MercadoLibre Mexico",
-                "MercadoLivre",
-                "Najdi.si",
-                "Neti",
-                "OLX.ba",
-                "OZON.ru",
-                "Odpiralni Časi",
-                "Ordbok",
-                "Osta",
-                "Palas Print",
-                "Pazaruvaj",
-                "Priberam",
-                "Price.ru",
-                "Prisjakt",
-                "QXL",
-                "Qwant",
-                "Qwant Junior",
-                "Readmoo 讀墨電子書",
-                "SS.lv",
-                "Salidzini.lv",
-                "Seznam",
-                "Tyda.se",
-                "Vatera.hu",
-                "WEB.DE Suche",
-                "Wikiccionari (oc)",
-                "Wolne Lektury",
-                "Yahoo! JAPAN",
-                "Yandex",
-                "Zoznam",
-                "bol.com",
-                "channel",
-                "clid",
-                "eBay",
-                "flip.kz",
-                "mail.com",
-                "mail.com search",
-                "tearma.ie",
-                "Õigekeelsussõnaraamat",
-                "Погодак",
-                "Поиск Mail.Ru",
-                "Яндекс",
-                "מילון מורפיקס",
-                "విక్షనరీ (te)",
-                "พจนานุกรม ลองดู",
-                "ヤフオク!",
-                "亚马逊",
-                "教えて！goo",
-                "楽天市場",
-                "百度",
-                "네이버",
-                "다음"
-            ]
-        },
 
         "UserMessaging": {
 	    "MoreFromMozilla": false,
