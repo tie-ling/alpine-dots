@@ -32,9 +32,9 @@ xwayland disable
 # Example configuration:
 #
  exec swayidle -w \
-          timeout 300 'swaylock --daemonize -f -c 000000' \
+          timeout 300 'swaylock --daemonize' \
           timeout 330 'doas /bin/loginctl suspend' \
-          before-sleep 'swaylock --daemonize -f -c 000000'
+          before-sleep 'swaylock --daemonize'
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
@@ -51,6 +51,10 @@ xwayland disable
        middle_emulation enabled
        scroll_method edge
    }
+
+input "type:keyboard" {
+  xkb_file $HOME/.config/sway/keymap
+}
 #
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.

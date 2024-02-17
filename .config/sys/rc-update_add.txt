@@ -12,5 +12,6 @@ rc-update add tlp
 rc-update add i2pd
 rc-update add yggdrasil
 rc-update add alsa
+rc-update add tor
 # rm unencrypted swap
 rc-update del swap boot

@@ -22,6 +22,7 @@ emacs-pgtk
 eudev
 firefox
 font-dejavu
+font-noto-cjk
 foot
 git
 gpg
@@ -35,6 +36,7 @@ gsettings-desktop-schemas
 i2pd
 i2pd-openrc
 i3status
+intel-media-driver
 isync
 iw
 linux-firmware-i915
@@ -63,6 +65,7 @@ pipewire-pulse
 pipewire-tools
 seatd
 simple-mtpfs
+strace
 sway
 swayidle
 swaylock
@@ -70,6 +73,7 @@ swaylockd
 terminus-font
 texlive-luatex
 tlp
+tor
 udev-init-scripts
 udev-init-scripts-openrc
 w3m
