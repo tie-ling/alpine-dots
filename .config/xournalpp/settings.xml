@@ -13,9 +13,9 @@
   <property name="edgePanMaxMult" value="5"/>
   <property name="zoomStep" value="20"/>
   <property name="zoomStepScroll" value="2"/>
-  <property name="displayDpi" value="216"/>
-  <property name="mainWndWidth" value="3840"/>
-  <property name="mainWndHeight" value="2124"/>
+  <property name="displayDpi" value="71"/>
+  <property name="mainWndWidth" value="1276"/>
+  <property name="mainWndHeight" value="693"/>
   <property name="maximized" value="false"/>
   <property name="showToolbar" value="false"/>
   <property name="showSidebar" value="false"/>
