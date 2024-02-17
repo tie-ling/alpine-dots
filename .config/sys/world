@@ -57,7 +57,10 @@ openssh-client-default
 openssl
 pass
 pass-otp
+pavucontrol
 pipewire
+pipewire-pulse
+pipewire-tools
 seatd
 simple-mtpfs
 sway
@@ -72,6 +75,7 @@ udev-init-scripts-openrc
 w3m
 wl-clipboard
 wpa_supplicant
+xdg-desktop-portal
 xdg-desktop-portal-wlr
 xournalpp
 yggdrasil
