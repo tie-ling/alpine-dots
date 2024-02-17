@@ -12,6 +12,7 @@ rc-update add zram-init boot
 rc-update add tlp
 rc-update add i2pd
 rc-update add yggdrasil
+rc-update add dnscrypt-proxy
 rc-update add alsa
 rc-update add tor
 # rm unencrypted swap
