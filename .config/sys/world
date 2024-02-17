@@ -57,6 +57,7 @@ openssh-client-default
 openssl
 pass
 pass-otp
+pipewire
 seatd
 simple-mtpfs
 sway
@@ -71,6 +72,7 @@ udev-init-scripts-openrc
 w3m
 wl-clipboard
 wpa_supplicant
+xdg-desktop-portal-wlr
 xournalpp
 yggdrasil
 yt-dlp
