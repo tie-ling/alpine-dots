@@ -9,5 +9,50 @@ IMAPStore gmail-remote
 Account gmail
 
 MaildirStore gmail-local
+Inbox /home/yc/Mail/gmail/Inbox
 Path /home/yc/Mail/gmail/
 SubFolders Verbatim
+
+Channel gmail-group-archive
+Create Near
+Far :gmail-remote:[Gmail]/Starred
+Near :gmail-local:Archive
+
+Channel gmail-group-drafts
+Create Near
+Far :gmail-remote:[Gmail]/Drafts
+Near :gmail-local:Drafts
+
+Channel gmail-group-flagged
+Create Near
+Far :gmail-remote:[Gmail]/Important
+Near :gmail-local:Flagged
+
+Channel gmail-group-inbox
+Create Near
+Far :gmail-remote:INBOX
+Near :gmail-local:Inbox
+
+Channel gmail-group-junk
+Create Near
+Far :gmail-remote:[Gmail]/Spam
+Near :gmail-local:Junk
+
+Channel gmail-group-sent
+Create Near
+Far ":gmail-remote:[Gmail]/Sent Mail"
+Near :gmail-local:Sent
+
+Channel gmail-group-trash
+Create Near
+Far :gmail-remote:[Gmail]/Trash
+Near :gmail-local:Trash
+
+Group gmail-group
+Channel gmail-group-archive
+Channel gmail-group-drafts
+Channel gmail-group-flagged
+Channel gmail-group-inbox
+Channel gmail-group-junk
+Channel gmail-group-sent
+Channel gmail-group-trash

@@ -1,4 +1,5 @@
 account gmail
+auth on
 from gyuchen86@gmail.com
 host smtp.gmail.com
 passwordeval cat /home/yc/email-pass.txt
@@ -7,4 +8,6 @@ tls on
 tls_starttls off
 tls_trust_file /etc/ssl/certs/ca-certificates.crt
 user gyuchen86@gmail.com
-account default:gmail
+account default : gmail
+
+
