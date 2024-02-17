@@ -32,9 +32,9 @@ xwayland disable
 # Example configuration:
 #
  exec swayidle -w \
-          timeout 300 'swaylock -f -c 000000' \
-          timeout 330 'doas loginctl suspend' \
-          before-sleep 'swaylock -f -c 000000'
+          timeout 300 'swaylock --daemonize -f -c 000000' \
+          timeout 330 'doas /bin/loginctl suspend' \
+          before-sleep 'swaylock --daemonize -f -c 000000'
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
