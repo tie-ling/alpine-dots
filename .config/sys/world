@@ -18,7 +18,7 @@ dosfstools
 e2fsprogs
 elogind
 emacs-doc
-emacs-pgtk
+emacs-nox
 eudev
 firefox
 font-dejavu

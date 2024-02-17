@@ -1,5 +1,6 @@
 setup-devd udev
 sed -i 's|#||' /etc/apk/repositories 
+sed -i '/swap/d' /etc/fstab
 
 rc-update add seatd boot
 rc-update add elogind
