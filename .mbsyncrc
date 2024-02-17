@@ -1,6 +1,7 @@
+IMAPAccount gmail
 CertificateFile /etc/ssl/certs/ca-certificates.crt
 Host imap.gmail.com
-PassCmd cat /home/yc/email-password.txt
+PassCmd "gpg --decrypt /home/yc/.password-store/email/gmail-app-password.gpg 2>/dev/null"
 Port 993
 SSLType IMAPS
 User gyuchen86@gmail.com
