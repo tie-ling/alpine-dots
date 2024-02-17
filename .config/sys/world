@@ -64,6 +64,7 @@ pinentry-qt
 pipewire
 pipewire-pulse
 pipewire-tools
+py3-qrcode
 seatd
 simple-mtpfs
 strace
