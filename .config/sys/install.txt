@@ -1,0 +1,44 @@
+Download and write alpine linux extended to an external disk.
+
+On Dell, use F12 to enter BIOS setup, then use Maintenance>Data Wipe
+to wipe data.
+
+Boot from Alpine.
+
+Set up networking:
+
+ # -r is needed for starting the network after configuration
+ setup-interfaces -r
+
+Set up ssh server:
+
+  # example:
+  ssh server:        openssh
+  allow root:        "prohibit-password" or "yes"
+  ssh key:           "none" or "<public key>"
+
+Set up root password:
+
+  passwd
+
+Connect from another computer with SSH.
+
+Set up time:
+
+  setup-ntp chrony
+
+Set up repos:
+
+ setup-apkrepos -c
+  # show mirror list, then select geographically nearest mirror
+  # -c argument enables community repo
+
+Install encrypted system:
+
+ setup-disk -v -e -m sys -s 0 /dev/sda
+ # -v for verbose
+ # -e for encrypted
+ # -m for system disk
+ # -s 0 for no swap (use swap file instead)
+
+Power off, then reboot.
