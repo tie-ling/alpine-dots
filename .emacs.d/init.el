@@ -14,19 +14,6 @@
       (eval-print-last-sexp)))
   (load bootstrap-file nil 'nomessage))
 
-(setq straight-use-package-by-default nil)
-
-(use-package tex-site
-  :straight auctex)
-
-(use-package pyim
-  :straight t)
-
-;; basedict comes after pyim
-(use-package pyim-basedict
-  :straight t
-  :config
-  (pyim-basedict-enable))
 
 
 ;; credit: yorickvP on Github
@@ -75,6 +62,17 @@
  '(tool-bar-mode nil)
  '(custom-enabled-themes '(modus-operandi)))
 
+(use-package tex-site
+  :straight auctex)
+
+(use-package pyim
+  :straight t)
+
+;; basedict comes after pyim
+(use-package pyim-basedict
+  :straight t
+  :config
+  (pyim-basedict-enable))
 
 (use-package shr
   :custom
