@@ -72,3 +72,15 @@ Restore system configs:
   su yc -c "git  -C /home/yc/.config/sys/etc ls-files -z" | xargs -0I{} cp /home/yc/.config/sys/etc/{} /etc/{}
 
 Reboot.
+
+Inside desktop, visit https://github.com/tie-ling/gpg/; download gpg tar;
+
+Extract gpg tar, then move to $HOME/.gnupg
+
+Now $HOME/.gnupg/gpg-agent.conf is missing,
+
+Use git restore gpg-agent.conf to restore it.
+
+Get pass words back:
+
+  git clone git@github.com:tie-ling/passwd $HOME/.password-store

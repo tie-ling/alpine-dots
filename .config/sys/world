@@ -18,7 +18,7 @@ dosfstools
 e2fsprogs
 elogind
 emacs-doc
-emacs-pgtk
+emacs-nox
 eudev
 firefox
 font-dejavu
@@ -44,6 +44,7 @@ linux-firmware-intel
 linux-firmware-mediatek
 linux-firmware-other
 linux-firmware-rtl_bt
+linux-lts
 man-pages
 mandoc
 mesa-dri-gallium
@@ -77,6 +78,7 @@ tlp
 tor
 udev-init-scripts
 udev-init-scripts-openrc
+ufw
 w3m
 wl-clipboard
 wpa_supplicant
