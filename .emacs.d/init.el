@@ -183,12 +183,12 @@
    (LaTeX-mode . LaTeX-math-mode))
   :custom
   (prettify-symbols-unprettify-at-point nil)
+  (TeX-engine 'luatex)
   (TeX-source-correlate-start-server t)
   (TeX-PDF-from-DVI nil)
   (TeX-view-program-selection '((output-pdf "Zathura")))
   (TeX-PDF-mode t)
   (TeX-save-query nil)
-  (TeX-engine 'default)
   (LaTeX-electric-left-right-brace t)
   (TeX-auto-save t)
   (TeX-debug-bad-boxes t)
@@ -216,13 +216,14 @@
   :config
   (add-hook 'TeX-after-compilation-finished-functions
             #'TeX-revert-document-buffer)
-  (dolist (symb
-           '(("\\(" . ?⌜)
-             ("\\)" . ?⌟)
-             ("\\colon" . ?:)
-             ("\\mathbb{C}" . ?ℂ)
-             ("\\mathbb{K}" . ?𝕂)))
-    (add-to-list 'tex--prettify-symbols-alist symb))
+  (with-eval-after-load 'LaTeX-math-mode
+    (dolist (symb
+             '(("\\(" . ?⌜)
+               ("\\)" . ?⌟)
+               ("\\colon" . ?:)
+               ("\\mathbb{C}" . ?ℂ)
+               ("\\mathbb{K}" . ?𝕂)))
+      (add-to-list 'tex--prettify-symbols-alist symb)))
   :straight nil)
 
 (use-package magit
