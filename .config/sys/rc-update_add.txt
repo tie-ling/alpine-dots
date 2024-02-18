@@ -12,6 +12,7 @@ rc-update add yggdrasil
 rc-update add dnscrypt-proxy
 rc-update add alsa
 rc-update add tor
+rc-update add hwclock
 # firewall
 # must run ufw enable first
 ufw enable
