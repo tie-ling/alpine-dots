@@ -188,7 +188,7 @@
   (TeX-view-program-selection '((output-pdf "Zathura")))
   (TeX-PDF-mode t)
   (TeX-save-query nil)
-  (TeX-engine 'luatex)
+  (TeX-engine 'default)
   (LaTeX-electric-left-right-brace t)
   (TeX-auto-save t)
   (TeX-debug-bad-boxes t)
