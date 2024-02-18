@@ -1,4 +1,5 @@
 rc-update add zram-init boot
+rc-update add consolefont boot
 rc-update add seatd boot
 rc-update add elogind
 rc-update add greetd
