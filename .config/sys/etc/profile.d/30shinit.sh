@@ -1,3 +1,4 @@
-if [ -r ~/.shinit ]; then
-  . ~/.shinit
+if [ -r $HOME/.ashrc ]; then
+  ENV=$HOME/.ashrc; export ENV
+  . $ENV
 fi
