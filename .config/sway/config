@@ -70,9 +70,10 @@ input "1149:8257:Kensington_Kensington_Slimblade_Trackball" {
 #
     # Start a terminal
     bindsym $mod+Return exec $term
+    bindsym $mod+o exec $term
 
     # Kill focused window
-    bindsym $mod+Shift+q kill
+    bindsym $mod+k kill
 
     # Start your launcher
     bindsym $mod+d exec $menu
