@@ -10,19 +10,6 @@ Set up networking:
  # -r is needed for starting the network after configuration
  setup-interfaces -r
 
-Set up ssh server:
-
-  # example:
-  ssh server:        openssh
-  allow root:        "prohibit-password" or "yes"
-  ssh key:           "none" or "<public key>"
-
-Set up root password:
-
-  passwd
-
-Connect from another computer with SSH.
-
 Set up time:
 
   setup-ntp chrony
@@ -33,6 +20,18 @@ Set up repos:
   # show mirror list, then select geographically nearest mirror
   # -c argument enables community repo
 
+Set up doas and normal user:
+
+  apk add doas
+  echo permit :wheel >> /etc/doas.d/permit-wheel.conf
+  adduser yc
+  # change group
+  adduser yc wheel
+
+Install git:
+
+  apk add git
+
 Install encrypted system:
 
  setup-disk -v -e -m sys -s 0 /dev/sda
@@ -42,3 +41,22 @@ Install encrypted system:
  # -s 0 for no swap (use swap file instead)
 
 Power off, then reboot.
+
+Add user home:
+
+  doas -s
+  git clone https://github.com/tie-ling/alpine-dots /home/yc
+  chown -R yc:yc /home/yc
+
+Install packages:
+
+  apk add $(while read i; do printf "$i "; done < /home/yc/.config/sys/world)
+
+
+Enable services:
+
+  . /home/yc/.config/sys/rc-update_add.txt
+
+Restore system configs:
+
+  git ls-files -z -C /home/yc/.config/sys/etc | xargs -0I{} cp {} /etc/{}

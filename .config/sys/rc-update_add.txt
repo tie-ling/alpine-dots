@@ -1,19 +1,11 @@
-setup-devd udev
-sed -i 's|#||' /etc/apk/repositories 
-sed -i '/swap/d' /etc/fstab
-
+rc-update add zram-init boot
 rc-update add seatd boot
 rc-update add elogind
-rc-update add consolefont boot
 rc-update add greetd
 rc-update add brightnessctl
-rc-update add consolefont boot
-rc-update add zram-init boot
 rc-update add tlp
 rc-update add i2pd
 rc-update add yggdrasil
 rc-update add dnscrypt-proxy
 rc-update add alsa
 rc-update add tor
-# rm unencrypted swap
-rc-update del swap boot
