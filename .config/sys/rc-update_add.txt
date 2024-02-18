@@ -1,3 +1,5 @@
+# for libinput
+setup-devd udev
 rc-update add zram-init boot
 rc-update add consolefont boot
 rc-update add seatd boot

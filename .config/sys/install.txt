@@ -57,6 +57,18 @@ Enable services:
 
   . /home/yc/.config/sys/rc-update_add.txt
 
+Fix greetd user:
+
+  adduser greetd seat
+
+Fix sway:
+
+  adduser yc seat
+
 Restore system configs:
 
-  git ls-files -z -C /home/yc/.config/sys/etc | xargs -0I{} cp {} /etc/{}
+  mkdir -p /etc/elogind/logind.conf.d
+  mkdir -p /etc/firefox/policies
+  su yc -c "git  -C /home/yc/.config/sys/etc ls-files -z" | xargs -0I{} cp /home/yc/.config/sys/etc/{} /etc/{}
+
+Reboot.
