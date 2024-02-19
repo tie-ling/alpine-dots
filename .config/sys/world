@@ -7,7 +7,6 @@ blkid
 brightnessctl
 busybox-mdev-openrc
 cage
-chromium
 chrony
 cryptsetup
 dmenu
