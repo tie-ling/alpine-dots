@@ -257,6 +257,6 @@ mouse_warping none
 bindsym $mod+x workspace back_and_forth
 
 for_window [app_id="foot_inhibit_swayidle"] inhibit_idle open, move container to workspace nolock
-bindsym $mod+Shift+i exec foot --title 'do not auto lock the computer' --app-id 'foot_inhibit_idle'
+bindsym $mod+Shift+i exec foot --title 'do not auto lock the computer' --app-id 'foot_inhibit_swayidle'
 
 include /etc/sway/config.d/*
