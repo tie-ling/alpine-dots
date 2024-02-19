@@ -7,3 +7,4 @@ function montab3k () { swaymsg input  "9580:109:GAOMON_Gaomon_Tablet_Pen"  map_t
 if [ ! -r $HOME/.w3m/history ]; then
   touch $HOME/.w3m/history
 fi
+export EDITOR="emacsclient --alternate-editor="" --create-frame"
