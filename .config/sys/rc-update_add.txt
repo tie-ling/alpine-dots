@@ -17,3 +17,6 @@ rc-update add hwclock
 # must run ufw enable first
 ufw enable
 rc-update add ufw
+# timezone
+setup-timezone Europe/Berlin
+# setup-timezone Asia/Shanghai
