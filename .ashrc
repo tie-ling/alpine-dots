@@ -8,3 +8,4 @@ if [ ! -r $HOME/.w3m/history ]; then
   touch $HOME/.w3m/history
 fi
 export EDITOR="emacsclient --alternate-editor="" --create-frame"
+export XDG_CURRENT_DESKTOP=sway
