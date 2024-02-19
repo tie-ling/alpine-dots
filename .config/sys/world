@@ -9,7 +9,6 @@ busybox-mdev-openrc
 cage
 chrony
 cryptsetup
-dmenu
 dnscrypt-proxy
 doas
 doas-doc
@@ -71,8 +70,6 @@ pipewire-tools
 py3-qrcode
 rsync
 seatd
-simple-mtpfs
-strace
 sway
 swayidle
 swaylock
