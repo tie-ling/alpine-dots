@@ -30,6 +30,7 @@ greetd
 greetd-agreety
 greetd-gtkgreet
 greetd-openrc
+grim
 grub-efi
 gsettings-desktop-schemas
 hunspell
@@ -85,6 +86,7 @@ udev-init-scripts-openrc
 ufw
 w3m
 wl-clipboard
+wl-mirror
 wpa_supplicant
 xdg-desktop-portal
 xdg-desktop-portal-wlr
