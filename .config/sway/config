@@ -247,8 +247,16 @@ client.background #ffffff
 hide_edge_borders both
 titlebar_padding 1
 titlebar_border_thickness 0
-font pango:sans-serif 8
+font sans-serif 8
 
+focus_wrapping yes
+focus_follows_mouse always
+focus_on_window_activation focus
+mouse_warping none
 
+bindsym $mod+x workspace back_and_forth
+
+for_window [app_id="foot_inhibit_swayidle"] inhibit_idle open, move container to workspace nolock
+bindsym $mod+Shift+i exec foot --title 'do not auto lock the computer' --app-id 'foot_inhibit_idle'
 
 include /etc/sway/config.d/*
