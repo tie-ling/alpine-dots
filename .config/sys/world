@@ -1,3 +1,4 @@
+7zip
 acct
 alpine-base
 alsa-utils
@@ -61,6 +62,7 @@ openconnect
 openssh-client-common
 openssh-client-default
 openssl
+parted
 pass
 pass-otp
 pavucontrol
