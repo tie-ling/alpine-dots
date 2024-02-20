@@ -226,8 +226,8 @@ bar {
 
 input type:touch events disabled
 output eDP-1 mode --custom 1600x900@60Hz scale 1
-output DP-3 scale 3
-output DP-4 scale 3
+output DP-3 res 2560x1440
+output DP-4 res 2560x1440
 
 exec gsettings set org.gnome.desktop.interface enable-animations false
 exec gsettings set org.gnome.desktop.interface gtk-key-theme "Emacs"
