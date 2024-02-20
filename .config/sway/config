@@ -249,7 +249,7 @@ client.background #ffffff
 hide_edge_borders both
 titlebar_padding 1
 titlebar_border_thickness 0
-font sans-serif 8
+font sans-serif 12
 
 focus_wrapping yes
 focus_follows_mouse always
