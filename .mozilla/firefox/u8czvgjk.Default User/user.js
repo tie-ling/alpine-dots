@@ -10,3 +10,5 @@ user_pref("javascript.options.asmjs", false);
 user_pref("javascript.options.wasm", false);
 user_pref("javascript.options.ion", false);
 user_pref("javascript.options.baselinejit", false);
+user_pref("browser.privatebrowsing.autostart", true);
+user_pref("browser.theme.dark-private-windows", false);

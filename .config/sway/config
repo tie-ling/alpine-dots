@@ -257,6 +257,7 @@ focus_on_window_activation focus
 mouse_warping none
 
 bindsym $mod+x workspace back_and_forth
+bindsym Shift+Print exec grim
 
 # When you use `for_window` the command you give is not executed
 # immediately. It is stored in a list and the command is executed

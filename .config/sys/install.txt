@@ -84,3 +84,8 @@ Use git restore gpg-agent.conf to restore it.
 Get pass words back:
 
   git clone git@github.com:tie-ling/passwd $HOME/.password-store
+
+Download umatrix for firefox:
+
+    wget -O /home/yc/.mozilla/firefox/umatrix-1.4.4.xpi \
+    https://addons.mozilla.org/firefox/downloads/file/3812704/umatrix-1.4.4.xpi
