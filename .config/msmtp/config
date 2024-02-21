@@ -2,7 +2,7 @@ account gmail
 auth on
 from gyuchen86@gmail.com
 host smtp.gmail.com
-passwordeval gpg --decrypt /home/yc/.password-store/email/gmail-app-password.gpg
+passwordeval gpg --decrypt /home/yc/.password-store/email/gmail-app-password.gpg 2>/dev/null
 port 465
 tls on
 tls_starttls off
