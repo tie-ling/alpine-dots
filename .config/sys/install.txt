@@ -67,6 +67,12 @@ Enable services:
 
 Reboot.
 
+Run emacs once, this will download and build all the packages emacs
+needs.  Need a working connection to raw.github:
+
+    e
+
+Visit this very file and copy the following commands:
 
 Download umatrix for firefox:
 
@@ -74,14 +80,30 @@ Download umatrix for firefox:
     https://addons.mozilla.org/firefox/downloads/file/3812704/umatrix-1.4.4.xpi
 
 
-Inside desktop, visit https://github.com/tie-ling/gpg/; download gpg tar;
+Download gpg tar:
 
-Extract gpg tar, then move to $HOME/.gnupg
+    wget https://raw.githubusercontent.com/tie-ling/gpg/main/gpg-2024-02-07.tar.xz
+
+Extract gpg tar, then move to $HOME/.gnupg:
+
+    cd $HOME
+    rm -rf $HOME/.gnupg
+    # /old/home/yc/gpg
+    # ^   ^    ^
+    # strip 3 leading components
+    tar -C $HOME --strip-components 3 -axf gpg-2024-02-07.tar.xz
+    mv $HOME/gpg $HOME/.gnupg
 
 Now $HOME/.gnupg/gpg-agent.conf is missing,
 
-Use git restore gpg-agent.conf to restore it.
+Use following command to restore it.
+
+    git restore .gnupg/gpg-agent.conf
+
+Connect to gpg agent:
+
+    . .ashrc
 
 Get pass words back:
 
-  git clone git@github.com:tie-ling/passwd $HOME/.password-store
+    git clone git@github.com:tie-ling/passwd $HOME/.password-store
