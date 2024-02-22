@@ -104,6 +104,15 @@ Connect to gpg agent:
 
     . .ashrc
 
-Get pass words back:
+Get pass words back and tub repo:
 
     git clone git@github.com:tie-ling/passwd $HOME/.password-store
+    git clone git@github.com:tie-ling/tub
+
+Fix git remote for the config repo:
+
+    git -C $HOME remote rm origin
+    git -C $HOME remote add origin git@github.com:tie-ling/alpine-dots
+    git -C $HOME push -u origin main
+
+Get math textbooks back.
