@@ -1,5 +1,16 @@
+# Fix greetd user:
+
+adduser greetd seat
+
+# Fix sway:
+
+adduser yc seat
+
 # for libinput
+
 setup-devd udev
+
+# set up services
 rc-update add zram-init boot
 rc-update add consolefont boot
 rc-update add seatd boot
@@ -13,10 +24,19 @@ rc-update add dnscrypt-proxy
 rc-update add alsa
 rc-update add tor
 rc-update add hwclock
+
 # firewall
+
 # must run ufw enable first
+
 ufw enable
+
+# then add ufw service
 rc-update add ufw
+
 # timezone
+
 setup-timezone Europe/Berlin
+
+# if at home
 # setup-timezone Asia/Shanghai

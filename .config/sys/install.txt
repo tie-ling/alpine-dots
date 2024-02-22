@@ -5,6 +5,8 @@ to wipe data.
 
 Boot from Alpine.
 
+Login as root.  There is no password.
+
 Set up networking:
 
  # -r is needed for starting the network after configuration
@@ -12,7 +14,11 @@ Set up networking:
 
 Set up time:
 
-  setup-ntp chrony
+  setup-ntp busybox
+
+Write date & time to hardware clock:
+
+  hwclock -w
 
 Set up repos:
 
@@ -42,6 +48,8 @@ Install encrypted system:
 
 Power off, then reboot.
 
+Log in as yc, there is currently no home dir.
+
 Add user home:
 
   doas -s
@@ -57,14 +65,6 @@ Enable services:
 
   . /home/yc/.config/sys/rc-update_add.txt
 
-Fix greetd user:
-
-  adduser greetd seat
-
-Fix sway:
-
-  adduser yc seat
-
 Restore system configs:
 
   mkdir -p /etc/elogind/logind.conf.d
@@ -72,6 +72,13 @@ Restore system configs:
   su yc -c "git  -C /home/yc/.config/sys/etc ls-files -z" | xargs -0I{} cp /home/yc/.config/sys/etc/{} /etc/{}
 
 Reboot.
+
+
+Download umatrix for firefox:
+
+    wget -O /home/yc/.mozilla/firefox/umatrix-1.4.4.xpi \
+    https://addons.mozilla.org/firefox/downloads/file/3812704/umatrix-1.4.4.xpi
+
 
 Inside desktop, visit https://github.com/tie-ling/gpg/; download gpg tar;
 
@@ -84,8 +91,3 @@ Use git restore gpg-agent.conf to restore it.
 Get pass words back:
 
   git clone git@github.com:tie-ling/passwd $HOME/.password-store
-
-Download umatrix for firefox:
-
-    wget -O /home/yc/.mozilla/firefox/umatrix-1.4.4.xpi \
-    https://addons.mozilla.org/firefox/downloads/file/3812704/umatrix-1.4.4.xpi
