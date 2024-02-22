@@ -115,4 +115,10 @@ Fix git remote for the config repo:
     git -C $HOME remote add origin git@github.com:tie-ling/alpine-dots
     git -C $HOME push -u origin main
 
+Init email:
+
+    mkdir -p $HOME/Mail/gmail
+    mu init --maildir $HOME/Mail --my-address gyuchen86@gmail.com
+    mu index
+
 Get math textbooks back.
