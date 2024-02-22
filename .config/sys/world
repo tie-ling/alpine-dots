@@ -8,7 +8,6 @@ brightnessctl
 busybox-mdev-openrc
 cage
 chromium
-chrony
 cryptsetup
 dnscrypt-proxy
 doas
