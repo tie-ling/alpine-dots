@@ -1,3 +1,5 @@
+set -xve
+
 # Fix greetd user:
 
 adduser greetd seat
@@ -40,3 +42,9 @@ setup-timezone Europe/Berlin
 
 # if at home
 # setup-timezone Asia/Shanghai
+
+# Restore system configs:
+
+mkdir -p /etc/elogind/logind.conf.d
+mkdir -p /etc/firefox/policies
+su yc -c "git  -C /home/yc/.config/sys/etc ls-files -z" | xargs -0I{} cp /home/yc/.config/sys/etc/{} /etc/{}

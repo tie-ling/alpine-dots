@@ -65,12 +65,6 @@ Enable services:
 
   . /home/yc/.config/sys/rc-update_add.txt
 
-Restore system configs:
-
-  mkdir -p /etc/elogind/logind.conf.d
-  mkdir -p /etc/firefox/policies
-  su yc -c "git  -C /home/yc/.config/sys/etc ls-files -z" | xargs -0I{} cp /home/yc/.config/sys/etc/{} /etc/{}
-
 Reboot.
 
 
