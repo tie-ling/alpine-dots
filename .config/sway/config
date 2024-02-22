@@ -225,10 +225,10 @@ bar {
 }
 
 input type:touch events disabled
-output eDP-1 mode --custom 1280x720@60Hz
-output DP-2 mode 1920x1080@60Hz
-output DP-3 mode 1920x1080@60Hz
-output DP-4 mode 1920x1080@60Hz
+output eDP-1 scale 2
+output DP-2 mode --custom 2560x1440@60Hz scale 2
+output DP-3 mode --custom 2560x1440@60Hz scale 2
+output DP-4 mode --custom 2560x1440@60Hz scale 2
 
 exec gsettings set org.gnome.desktop.interface enable-animations false
 exec gsettings set org.gnome.desktop.interface gtk-key-theme "Emacs"
