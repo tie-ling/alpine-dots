@@ -118,7 +118,7 @@ Fix git remote for the config repo:
 Init email:
 
     mkdir -p $HOME/Mail/gmail
-    mu init --maildir $HOME/Mail --my-address gyuchen86@gmail.com
+    mu init --maildir $HOME/Mail --my-address gyuchen86@gmail.com --my-address yguo@posteo.net
     mu index
 
 Get math textbooks back.
