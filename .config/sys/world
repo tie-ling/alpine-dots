@@ -55,6 +55,7 @@ mg
 mpv
 msmtp
 mu
+mu-doc
 mu4e
 openconnect
 openssh-client-common
@@ -75,6 +76,7 @@ swayidle
 swaylock
 swaylockd
 terminus-font
+texinfo
 texlive-luatex
 tlp
 tor

@@ -53,3 +53,7 @@ su yc -c "git  -C /home/yc/.config/sys/etc ls-files -z" | xargs -0I{} cp /home/y
 # Remove temporary doas conf: has conflict with the real deal
 
 rm /etc/doas.d/permit-wheel.conf
+
+# install info files into dir file
+# https://www.gnu.org/software/texinfo/manual/texinfo/html_node/Directory-File.html
+find /usr/share/info/ -name '*.info*' -print0 | xargs -0I{} install-info {} /usr/share/info/dir
