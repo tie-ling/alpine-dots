@@ -47,6 +47,7 @@ setup-timezone Europe/Berlin
 
 mkdir -p /etc/elogind/logind.conf.d
 mkdir -p /etc/firefox/policies
+mkdir -p /etc/elogind/system-sleep/
 su yc -c "git  -C /home/yc/.config/sys/etc ls-files -z" | xargs -0I{} cp /home/yc/.config/sys/etc/{} /etc/{}
 
 # Remove temporary doas conf: has conflict with the real deal
