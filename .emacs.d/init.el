@@ -195,7 +195,7 @@
   (mu4e-sent-messages-behavior 'sent)
   (mu4e-change-filenames-when-moving t)
   (mu4e-get-mail-command "mbsync -a")
-  (mu4e-attachment-dir "~/Downloads/"))
+  (mu4e-attachment-dir (concat (getenv "HOME") "/Downloads/")))
 
 (use-package latex
   :hook
