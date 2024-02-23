@@ -42,6 +42,9 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+
+ ;; busybox ls does not support dired option, use lisp emulation instead
+ '(dired-use-ls-dired nil)
  '(send-mail-function 'sendmail-send-it)
  '(sendmail-program "msmtp")
  '(user-mail-address "gyuchen86@gmail.com")
@@ -61,6 +64,10 @@
  '(scroll-bar-mode nil)
  '(tool-bar-mode nil)
  '(custom-enabled-themes '(modus-operandi)))
+
+(use-package ls-lisp
+  :custom
+  (ls-lisp-use-insert-directory-program nil))
 
 (use-package tex-site
   :straight auctex)
