@@ -12,3 +12,5 @@ user_pref("javascript.options.ion", false);
 user_pref("javascript.options.baselinejit", false);
 user_pref("browser.privatebrowsing.autostart", true);
 user_pref("browser.theme.dark-private-windows", false);
+user_pref("browser.translations.automaticallyPopup", false);
+user_pref("browser.translations.neverTranslateLanguages", "de");
