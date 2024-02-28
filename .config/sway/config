@@ -59,7 +59,7 @@ input "1149:8257:Kensington_Kensington_Slimblade_Trackball" {
 }
 
 input "9580:109:GAOMON_Gaomon_Tablet_Pen" map_to_region 512 288 768 432
-
+input "9580:110:PenTablet_Pen" map_to_region 512 288 768 432
 
 #
 # You can get the names of your inputs by running: swaymsg -t get_inputs
