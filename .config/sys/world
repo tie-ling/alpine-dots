@@ -1,5 +1,8 @@
+.makedepends-gpxsee=20240229.114717
+abuild-rootbld
 acct
 alpine-base
+alpine-sdk
 alsa-utils
 alsaconf
 bemenu

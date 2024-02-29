@@ -1,3 +1,4 @@
+#!/bin/sh
 set -xve
 
 # Fix greetd user:
@@ -57,3 +58,14 @@ rm /etc/doas.d/permit-wheel.conf
 # install info files into dir file
 # https://www.gnu.org/software/texinfo/manual/texinfo/html_node/Directory-File.html
 find /usr/share/info/ -name '*.info*' -print0 | xargs -0I{} install-info {} /usr/share/info/dir
+
+# add yc to abuild group
+adduser yc abuild
+
+# abuild permissions
+mkdir -p /var/cache/distfiles
+chgrp abuild /var/cache/distfiles
+chmod g+w /var/cache/distfiles
+
+# set up apkcache to avoid redownloading packages over and over
+setup-apkcache /var/cache/apk
