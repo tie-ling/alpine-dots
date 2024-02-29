@@ -83,6 +83,7 @@ texinfo
 texlive-luatex
 tlp
 tor
+tree-sitter-grammars
 udev-init-scripts
 udev-init-scripts-openrc
 ufw
