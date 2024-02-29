@@ -66,6 +66,3 @@ adduser yc abuild
 mkdir -p /var/cache/distfiles
 chgrp abuild /var/cache/distfiles
 chmod g+w /var/cache/distfiles
-
-# set up apkcache to avoid redownloading packages over and over
-setup-apkcache /var/cache/apk
