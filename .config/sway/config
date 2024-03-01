@@ -277,4 +277,4 @@ bindsym $mod+Shift+i exec foot --title 'do not auto lock the computer' --app-id 
 
 include /etc/sway/config.d/*
 
-exec sh -c "touch /tmp/swaylock-sleep; inotifyd swaylock /tmp/swaylock-sleep"
+exec touch /tmp/swaylock-sleep && inotifyd swaylock /tmp/swaylock-sleep
