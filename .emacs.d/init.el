@@ -238,7 +238,7 @@
   :config
   (add-hook 'TeX-after-compilation-finished-functions
             #'TeX-revert-document-buffer)
-  (with-eval-after-load 'LaTeX-math-mode
+  (with-eval-after-load "tex-mode"
     (dolist (symb
              '(("\\(" . ?⌜)
                ("\\)" . ?⌟)
