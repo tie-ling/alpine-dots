@@ -167,10 +167,10 @@
             '((user-mail-address . "gyuchen86@gmail.com")
               (user-full-name . "Yuchen Guo")
               (message-user-organization . "Tieling")
-              (mu4e-sent-folder . "/gmail/Sent/")
-              (mu4e-drafts-folder . "/gmail/Drafts/")
-              (mu4e-trash-folder . "/gmail/Trash/")
-              (mu4e-refile-folder . "/gmail/Archive/")
+              (mu4e-sent-folder . "/gmail/[Gmail]/Sent Mail/")
+              (mu4e-drafts-folder . "/gmail/[Gmail]/Drafts/")
+              (mu4e-trash-folder . "/gmail/[Gmail]/Trash/")
+              (mu4e-refile-folder . "/gmail/[Gmail]/Important/")
               (mu4e-compose-signature . (concat "Yuchen Guo\n"))))
           ,(make-mu4e-context
             :name "posteo"

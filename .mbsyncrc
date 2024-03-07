@@ -15,7 +15,7 @@ Path /home/yc/Mail/gmail/
 SubFolders Verbatim
 
 Channel gmail-group-all
-Patterns *
+Patterns * !"[Gmail]/All Mail"
 Create Near
 Far :gmail-remote:
 Near :gmail-local:
