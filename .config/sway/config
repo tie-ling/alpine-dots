@@ -58,10 +58,11 @@ input "1149:8257:Kensington_Kensington_Slimblade_Trackball" {
       left_handed enabled
 }
 
-# 6 out of 10
-input "9580:109:GAOMON_Gaomon_Tablet_Pen" map_to_region 512 288 768 432
 # 11 out of 20
+input "9580:109:GAOMON_Gaomon_Tablet_Pen" map_to_region 576 324 704 396
 input "9580:110:PenTablet_Pen" map_to_region 576 324 704 396
+
+bindsym $mod+Shift+l exec doas /bin/loginctl suspend
 
 #
 # You can get the names of your inputs by running: swaymsg -t get_inputs
@@ -277,4 +278,5 @@ bindsym $mod+Shift+i exec foot --title 'do not auto lock the computer' --app-id 
 
 include /etc/sway/config.d/*
 
-exec touch /tmp/swaylock-sleep && inotifyd swaylock /tmp/swaylock-sleep
+# at home; no need for lock
+# exec touch /tmp/swaylock-sleep && inotifyd swaylock /tmp/swaylock-sleep
