@@ -58,9 +58,8 @@ input "1149:8257:Kensington_Kensington_Slimblade_Trackball" {
       left_handed enabled
 }
 
-# 11 out of 20
-input "9580:109:GAOMON_Gaomon_Tablet_Pen" map_to_region 576 324 704 396
-input "9580:110:PenTablet_Pen" map_to_region 576 324 704 396
+# 3 out of 4
+input "9580:109:GAOMON_Gaomon_Tablet_Pen" map_to_region 320 180 960 540
 
 bindsym $mod+Shift+l exec doas /bin/loginctl suspend
 
