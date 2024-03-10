@@ -102,19 +102,7 @@
   :custom
   (display-time-mode t))
 
-;; ispell, multilingual spellchecking
-;; https://www.monotux.tech/posts/2021/02/hunspell-multi-lang/
-(use-package ispell
-  :custom
-  (ispell-program-name "hunspell")
-  (ispell-dictionary "de_DE,en_US")
-  :config
-  (setenv "LANG" "en_US.UTF-8")
-  (ispell-set-spellchecker-params)
-  (ispell-hunspell-add-multi-dic "de_DE,en_US"))
-
 (use-package nix-mode)
-
 
 (use-package dired
   :config
