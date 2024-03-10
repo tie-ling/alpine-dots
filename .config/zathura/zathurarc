@@ -1,3 +1,4 @@
+set sandbox "strict"
 set adjust-open	"width"
 set default-bg	"#FFFFFF"
 set default-fg	"#000000"
