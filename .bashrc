@@ -1,6 +1,4 @@
 #!/bin/sh
-export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
-gpg-connect-agent updatestartuptty /bye > /dev/null
 function e () { emacsclient --alternate-editor="" --create-frame "${@}"; }
 function montab () { swaymsg input "9580:109:GAOMON_Gaomon_Tablet_Pen" map_to_region 512 288 768 432; }
 if [ ! -r $HOME/.w3m/history ]; then

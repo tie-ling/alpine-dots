@@ -141,6 +141,9 @@
   (ispell-set-spellchecker-params)
   (ispell-hunspell-add-multi-dic "de_DE,en_US"))
 
+(use-package nix-mode
+  :straight t)
+
 (use-package dired
   :config
   (defun dired-open-pdf ()
