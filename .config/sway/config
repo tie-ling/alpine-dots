@@ -228,7 +228,6 @@ bar {
     }
 }
 
-input type:touch events disabled
 output eDP-1 scale 2
 output DP-2 mode --custom 2560x1440@60Hz scale 2
 output DP-3 mode --custom 2560x1440@60Hz scale 2
