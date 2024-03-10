@@ -5,7 +5,7 @@
 # Read `man 5 sway` for a complete reference.
 
 workspace_layout tabbed
-seat "*" xcursor_theme Adwaita 16
+seat "*" xcursor_theme Adwaita 32
 
 ### Variables
 #
