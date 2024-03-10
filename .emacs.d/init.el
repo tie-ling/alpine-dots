@@ -10,9 +10,7 @@
   (process-send-string wl-copy-process text)
   (process-send-eof wl-copy-process))
 (defun wl-paste ()
-  (if (and wl-copy-process (process-live-p wl-copy-process))
-      nil ; should return nil if we're the current paste owner
-    (shell-command-to-string "wl-paste -n | tr -d \r")))
+  (shell-command-to-string "wl-paste -n"))
 (setq interprogram-cut-function 'wl-copy)
 (setq interprogram-paste-function 'wl-paste)
 
@@ -25,8 +23,6 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
 
- ;; busybox ls does not support dired option, use lisp emulation instead
- '(dired-use-ls-dired nil)
  '(send-mail-function 'sendmail-send-it)
  '(sendmail-program "msmtp")
  '(user-mail-address "gyuchen86@gmail.com")
