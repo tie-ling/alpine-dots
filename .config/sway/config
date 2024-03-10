@@ -33,6 +33,7 @@ xwayland disable
 #
  exec swayidle -w \
           timeout 630 'systemctl suspend'
+#          before-sleep 'swaylock --daemonize'
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
