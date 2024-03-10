@@ -1,2 +1,0 @@
-useradd -m -U -G wheel yc
-passwd yc

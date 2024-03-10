@@ -44,7 +44,6 @@
  '(read-buffer-completion-ignore-case t)
  '(ring-bell-function 'ignore)
  '(scroll-bar-mode nil)
- '(tool-bar-mode nil)
  '(custom-enabled-themes '(modus-operandi)))
 
 (use-package ls-lisp
