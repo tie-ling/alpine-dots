@@ -51,15 +51,10 @@
   :custom
   (ls-lisp-use-insert-directory-program nil))
 
-(use-package tex-site
-  :straight auctex)
-
-(use-package pyim
-  :straight t)
+(use-package pyim)
 
 ;; basedict comes after pyim
 (use-package pyim-basedict
-  :straight t
   :config
   (pyim-basedict-enable))
 
@@ -123,8 +118,8 @@
   (ispell-set-spellchecker-params)
   (ispell-hunspell-add-multi-dic "de_DE,en_US"))
 
-(use-package nix-mode
-  :straight t)
+(use-package nix-mode)
+
 
 (use-package dired
   :config
@@ -230,8 +225,8 @@
                ("\\colon" . ?:)
                ("\\mathbb{C}" . ?ℂ)
                ("\\mathbb{K}" . ?𝕂)))
-      (add-to-list 'tex--prettify-symbols-alist symb)))
-  :straight nil)
+      (add-to-list 'tex--prettify-symbols-alist symb))))
 
-(use-package magit
-  :straight t)
+
+(use-package magit)
+
