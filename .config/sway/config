@@ -270,6 +270,8 @@ for_window [app_id="^.*"] inhibit_idle fullscreen
 for_window [app_id="foot_inhibit_swayidle"] inhibit_idle open, move container to workspace nolock
 bindsym $mod+Shift+i exec foot --title 'do not auto lock the computer' --app-id 'foot_inhibit_swayidle'
 
+exec dconf write /org/gnome/desktop/interface/enable-animations false
+
 include /etc/sway/config.d/*
 
 # at home; no need for lock
