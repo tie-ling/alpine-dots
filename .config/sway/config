@@ -21,7 +21,7 @@ set $term foot
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu bemenu-run | xargs swaymsg exec
+set $menu fuzzel
 
 ### Output configuration
 
@@ -271,6 +271,7 @@ for_window [app_id="foot_inhibit_swayidle"] inhibit_idle open, move container to
 bindsym $mod+Shift+i exec foot --title 'do not auto lock the computer' --app-id 'foot_inhibit_swayidle'
 
 exec dconf write /org/gnome/desktop/interface/enable-animations false
+exec systemctl --user start emacs
 
 include /etc/sway/config.d/*
 

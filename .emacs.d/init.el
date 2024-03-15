@@ -22,25 +22,25 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
-
- '(send-mail-function 'sendmail-send-it)
- '(sendmail-program "msmtp")
- '(user-mail-address "gyuchen86@gmail.com")
- '(mail-specify-envelope-from t)
- '(message-sendmail-envelope-from 'header)
- '(mail-envelope-from 'header)
  '(auto-fill-function 'do-auto-fill t)
+ '(custom-enabled-themes '(modus-operandi) nil nil "Customized with use-package custom")
  '(default-input-method "german-postfix")
+ '(inhibit-startup-screen t)
+ '(mail-envelope-from 'header)
+ '(mail-specify-envelope-from t)
+ '(menu-bar-mode nil)
+ '(message-sendmail-envelope-from 'header)
+ '(mode-line-compact 'long)
  '(modus-themes-bold-constructs t)
  '(modus-themes-inhibit-reload nil)
  '(modus-themes-italic-constructs t)
- '(inhibit-startup-screen t)
- '(menu-bar-mode nil)
- '(mode-line-compact 'long)
  '(read-buffer-completion-ignore-case t)
  '(ring-bell-function 'ignore)
  '(scroll-bar-mode nil)
- '(custom-enabled-themes '(modus-operandi)))
+ '(send-mail-function 'sendmail-send-it)
+ '(sendmail-program "msmtp")
+ '(tool-bar-mode nil)
+ '(user-mail-address "gyuchen86@gmail.com"))
 
 (use-package ls-lisp
   :custom
@@ -157,7 +157,7 @@
   (mail-user-agent 'mu4e-user-agent)
   (mu4e-sent-messages-behavior 'sent)
   (mu4e-change-filenames-when-moving t)
-  (mu4e-get-mail-command "mbsync -a")
+  (mu4e-get-mail-command "true")
   (mu4e-attachment-dir (concat (getenv "HOME") "/Downloads/")))
 
 (use-package latex
@@ -213,3 +213,9 @@
 
 (use-package magit)
 
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
