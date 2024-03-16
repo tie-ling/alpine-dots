@@ -34,6 +34,8 @@
  '(modus-themes-bold-constructs t)
  '(modus-themes-inhibit-reload nil)
  '(modus-themes-italic-constructs t)
+ '(modus-themes-mixed-fonts t)
+ '(modus-themes-variable-pitch-ui t)
  '(read-buffer-completion-ignore-case t)
  '(ring-bell-function 'ignore)
  '(scroll-bar-mode nil)
