@@ -275,5 +275,7 @@ exec systemctl --user restart emacs
 
 include /etc/sway/config.d/*
 
+input type:touch events disabled
+
 # at home; no need for lock
 # exec touch /tmp/swaylock-sleep && inotifyd swaylock /tmp/swaylock-sleep
