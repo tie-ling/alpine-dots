@@ -277,5 +277,8 @@ include /etc/sway/config.d/*
 
 input type:touch events disabled
 
+bindsym $mod+f5 output eDP-1 toggle
+
+output * scale 3
 # at home; no need for lock
 # exec touch /tmp/swaylock-sleep && inotifyd swaylock /tmp/swaylock-sleep

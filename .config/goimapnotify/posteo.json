@@ -1,0 +1,21 @@
+{
+  "host": "posteo.de",
+  "hostCmd": "",
+  "port": 993,
+  "tls": true,
+  "tlsOptions": {
+    "rejectUnauthorized": true,
+    "starttls": false
+  },
+  "username": "yguo@posteo.net",
+  "usernameCmd": "",
+  "password": "",
+  "passwordCmd": "gpg --decrypt /home/yc/.password-store/email/posteo.gpg 2>/dev/null",
+  "xoauth2": false,
+  "onNewMail": "aplay /home/yc/email.wav",
+  "onNewMailPost": "",
+  "wait": 20,
+  "boxes": [
+    "INBOX"
+  ]
+}
