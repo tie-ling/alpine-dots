@@ -6,3 +6,4 @@ if [ ! -r $HOME/.w3m/history ]; then
 fi
 export EDITOR="emacsclient --alternate-editor="" --create-frame"
 function tubb () { wl-copy -n < $HOME/.config/tubpass.txt; }
+function gm () { gammastep -O 4000 -b 0.7:0.7; }
