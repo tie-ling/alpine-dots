@@ -1,22 +1,3 @@
-;; credit: yorickvP on Github
-(setq wl-copy-process nil)
-(defun wl-copy (text)
-  (setq wl-copy-process
-	(make-process :name "wl-copy"
-                      :buffer nil
-                      :command '("wl-copy" "-f" "-n")
-                      :connection-type 'pipe
-                      :noquery t))
-  (process-send-string wl-copy-process text)
-  (process-send-eof wl-copy-process))
-(defun wl-paste ()
-  (shell-command-to-string "wl-paste -n"))
-(setq interprogram-cut-function 'wl-copy)
-(setq interprogram-paste-function 'wl-paste)
-
-
-
-
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -31,22 +12,18 @@
  '(menu-bar-mode nil)
  '(message-sendmail-envelope-from 'header)
  '(mode-line-compact 'long)
- '(modus-themes-bold-constructs t)
+ '(modus-themes-bold-constructs nil)
  '(modus-themes-inhibit-reload nil)
  '(modus-themes-italic-constructs t)
  '(modus-themes-mixed-fonts t)
  '(modus-themes-variable-pitch-ui t)
  '(read-buffer-completion-ignore-case t)
- '(ring-bell-function 'ignore)
+ '(ring-bell-function nil)
  '(scroll-bar-mode nil)
  '(send-mail-function 'sendmail-send-it)
  '(sendmail-program "msmtp")
  '(tool-bar-mode nil)
  '(user-mail-address "gyuchen86@gmail.com"))
-
-(use-package ls-lisp
-  :custom
-  (ls-lisp-use-insert-directory-program nil))
 
 (use-package pyim)
 
@@ -162,9 +139,18 @@
   (mu4e-get-mail-command "true")
   (mu4e-attachment-dir (concat (getenv "HOME") "/Downloads/")))
 
+(use-package Info
+  :hook
+  ((Info-mode . variable-pitch-mode)))
+
+(use-package text-mode
+  :hook
+  ((text-mode . variable-pitch-mode)))
+
 (use-package latex
   :hook
   ((LaTeX-mode . turn-on-reftex)
+   (LaTeX-mode . variable-pitch-mode)
    (LaTeX-mode . prettify-symbols-mode)
    (LaTeX-mode . TeX-source-correlate-mode)
    (LaTeX-mode . LaTeX-math-mode))
