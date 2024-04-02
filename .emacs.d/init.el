@@ -1,3 +1,20 @@
+;; credit: yorickvP on Github
+(setq wl-copy-process nil)
+(defun wl-copy (text)
+  (setq wl-copy-process
+       (make-process :name "wl-copy"
+                      :buffer nil
+                      :command '("wl-copy" "-f" "-n")
+                      :connection-type 'pipe
+                      :noquery t))
+  (process-send-string wl-copy-process text)
+  (process-send-eof wl-copy-process))
+(defun wl-paste ()
+  (shell-command-to-string "wl-paste -n"))
+(setq interprogram-cut-function 'wl-copy)
+(setq interprogram-paste-function 'wl-paste)
+
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
