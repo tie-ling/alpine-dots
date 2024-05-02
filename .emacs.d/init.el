@@ -173,7 +173,7 @@
    (LaTeX-mode . LaTeX-math-mode))
   :custom
   (prettify-symbols-unprettify-at-point nil)
-  (TeX-engine 'default)
+  (TeX-engine 'luatex)
   (TeX-source-correlate-start-server t)
   (TeX-PDF-from-DVI nil)
   (TeX-view-program-selection '((output-pdf "Zathura")))
