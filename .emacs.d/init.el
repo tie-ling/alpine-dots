@@ -39,6 +39,7 @@
  '(scroll-bar-mode nil)
  '(send-mail-function 'sendmail-send-it)
  '(sendmail-program "msmtp")
+ '(texmathp-tex-commands '(("\\stopformula" sw-off) ("\\startformula" sw-on)))
  '(tool-bar-mode nil)
  '(user-mail-address "gyuchen86@gmail.com"))
 
