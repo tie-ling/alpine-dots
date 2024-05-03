@@ -180,10 +180,11 @@
   (TeX-PDF-mode t)
   (TeX-save-query nil)
   (LaTeX-electric-left-right-brace t)
+  (ConTeXt-Mark-version "IV")
   (TeX-auto-save t)
   (TeX-debug-bad-boxes t)
   (TeX-debug-warnings t)
-  (TeX-electric-math '("\\(" . "\\)"))
+  (TeX-electric-math '("$" . "$"))
   (TeX-electric-sub-and-superscript t)
   (reftex-plug-into-AUCTeX t)
   (LaTeX-math-list
@@ -193,13 +194,6 @@
      ("o n" "mathbb{N}" nil nil)
      (?= "coloneq" nil nil)
      ("o c" "mathbb{C}" nil nil)))
-  (ispell-tex-skip-alists
-   (list
-    (append
-     (car ispell-tex-skip-alists)
-     ;; https://emacs.stackexchange.com/a/19650
-     '(("\\\\[[]" . "\\\\[]]")))
-    (cadr ispell-tex-skip-alists)))
   :bind
   (:map TeX-mode-map
         ("<f8>" . TeX-command-run-all))
