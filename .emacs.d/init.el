@@ -169,6 +169,8 @@
   :hook
   ((LaTeX-mode . turn-on-reftex)
    (LaTeX-mode . variable-pitch-mode)
+   (ConTeXt-mode . prettify-symbols-mode)
+   (ConTeXt-mode . LaTeX-math-mode)
    (LaTeX-mode . prettify-symbols-mode)
    (LaTeX-mode . TeX-source-correlate-mode)
    (LaTeX-mode . LaTeX-math-mode))
@@ -203,9 +205,7 @@
             #'TeX-revert-document-buffer)
   (with-eval-after-load "tex-mode"
     (dolist (symb
-             '(("\\(" . ?⌜)
-               ("\\)" . ?⌟)
-               ("\\colon" . ?:)
+             '(("\\colon" . ?:)
                ("\\mathbb{C}" . ?ℂ)
                ("\\mathbb{K}" . ?𝕂)))
       (add-to-list 'tex--prettify-symbols-alist symb))))
