@@ -187,9 +187,6 @@
    ;; show \alpha as α and \mathbb{R} as ℝ
    (ConTeXt-mode . prettify-symbols-mode)
 
-   ;; for SyncTeX
-   (ConTeXt-mode . TeX-source-correlate-mode)
-
    ;; shortcuts for symbols
    (ConTeXt-mode . LaTeX-math-mode))
   :custom
@@ -201,7 +198,6 @@
   ;; Let AUCTeX detect math environments
   (texmathp-tex-commands '(("\\startformula" sw-on) ("\\stopformula" sw-off)))
 
-  (TeX-source-correlate-start-server t)
   (TeX-view-program-selection '((output-pdf "Zathura")))
   (TeX-save-query nil)
   (TeX-auto-save t)
@@ -220,6 +216,12 @@
   :bind
   (:map TeX-mode-map
         ("<f8>" . TeX-command-run-all))
+  (:map ConTeXt-mode-map ("(" . LaTeX-insert-left-brace))
+  (:map ConTeXt-mode-map (")" . LaTeX-insert-right-brace))
+  (:map ConTeXt-mode-map ("[" . LaTeX-insert-left-brace))
+  (:map ConTeXt-mode-map ("]" . LaTeX-insert-right-brace))
+  (:map ConTeXt-mode-map ("{" . LaTeX-insert-left-brace))
+  (:map ConTeXt-mode-map ("}" . LaTeX-insert-right-brace))
   :config
   (add-hook 'TeX-after-compilation-finished-functions
             #'TeX-revert-document-buffer)
@@ -235,12 +237,10 @@
   ((LaTeX-mode . turn-on-reftex)
    (LaTeX-mode . variable-pitch-mode)
    (LaTeX-mode . prettify-symbols-mode)
-   (LaTeX-mode . TeX-source-correlate-mode)
    (LaTeX-mode . LaTeX-math-mode))
   :custom
   (prettify-symbols-unprettify-at-point nil)
   (TeX-engine 'luatex)
-  (TeX-source-correlate-start-server t)
   (TeX-PDF-from-DVI nil)
   (TeX-view-program-selection '((output-pdf "Zathura")))
   (TeX-PDF-mode t)
@@ -249,7 +249,7 @@
   (TeX-auto-save t)
   (TeX-debug-bad-boxes t)
   (TeX-debug-warnings t)
-  (TeX-electric-math '("\(" . "\)"))
+  (TeX-electric-math '("$" . "$"))
   (TeX-electric-sub-and-superscript t)
   (reftex-plug-into-AUCTeX t)
   (LaTeX-math-list
