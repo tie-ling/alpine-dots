@@ -217,11 +217,8 @@
   (:map TeX-mode-map
         ("<f8>" . TeX-command-run-all))
   (:map ConTeXt-mode-map ("(" . LaTeX-insert-left-brace))
-  (:map ConTeXt-mode-map (")" . LaTeX-insert-right-brace))
   (:map ConTeXt-mode-map ("[" . LaTeX-insert-left-brace))
-  (:map ConTeXt-mode-map ("]" . LaTeX-insert-right-brace))
   (:map ConTeXt-mode-map ("{" . LaTeX-insert-left-brace))
-  (:map ConTeXt-mode-map ("}" . LaTeX-insert-right-brace))
   :config
   (add-hook 'TeX-after-compilation-finished-functions
             #'TeX-revert-document-buffer)
