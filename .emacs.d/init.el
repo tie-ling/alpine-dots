@@ -39,7 +39,6 @@
  '(scroll-bar-mode nil)
  '(send-mail-function 'sendmail-send-it)
  '(sendmail-program "msmtp")
- '(texmathp-tex-commands '(("\\stopformula" sw-off) ("\\startformula" sw-on)))
  '(tool-bar-mode nil)
  '(user-mail-address "gyuchen86@gmail.com"))
 
@@ -165,12 +164,76 @@
   :hook
   ((text-mode . variable-pitch-mode)))
 
+;; AUCTeX has good support for LaTeX out-of-the-box. For ConTeXt, not
+;; so much.
+;;
+;; Fortunately much of the functionality, in particular
+;; LaTeX-math-mode can be reused as-is in ConTeXt mode.
+;; LaTeX-math-mode is a minor mode with easy access to TeX math
+;; macros.  Such as ` a for \alpha.  You can define custom shortcuts
+;; via LaTeX-math-list as well.
+;;
+;; The key is to tweak texmathp-tex-commands for recognizing math
+;; environment in a ConTeXt document, or else LaTeX-math will not
+;; work.
+
+(use-package context
+  :hook
+  ((ConTeXt-mode . turn-on-reftex)
+
+   ;; personal preference
+   (ConTeXt-mode . variable-pitch-mode)
+
+   ;; show \alpha as α and \mathbb{R} as ℝ
+   (ConTeXt-mode . prettify-symbols-mode)
+
+   ;; for SyncTeX
+   (ConTeXt-mode . TeX-source-correlate-mode)
+
+   ;; shortcuts for symbols
+   (ConTeXt-mode . LaTeX-math-mode))
+  :custom
+  ;; AUCTeX defaults to mkii; change to iv for iv and lmtx
+  (ConTeXt-Mark-version "IV")
+
+  (prettify-symbols-unprettify-at-point nil)
+
+  ;; Let AUCTeX detect math environments
+  (texmathp-tex-commands '(("\\startformula" sw-on) ("\\stopformula" sw-off)))
+
+  (TeX-source-correlate-start-server t)
+  (TeX-view-program-selection '((output-pdf "Zathura")))
+  (TeX-save-query nil)
+  (TeX-auto-save t)
+  (TeX-debug-bad-boxes t)
+  (TeX-debug-warnings t)
+  (TeX-electric-math '("$" . "$"))
+  (TeX-electric-sub-and-superscript t)
+  (reftex-plug-into-AUCTeX t)
+  (LaTeX-math-list
+   '(("o r" "mathbb{R}" nil nil)
+     ("o Q" "qquad" nil nil)
+     ("o q" "quad" nil nil)
+     ("o n" "mathbb{N}" nil nil)
+     (?= "coloneq" nil nil)
+     ("o c" "mathbb{C}" nil nil)))
+  :bind
+  (:map TeX-mode-map
+        ("<f8>" . TeX-command-run-all))
+  :config
+  (add-hook 'TeX-after-compilation-finished-functions
+            #'TeX-revert-document-buffer)
+  (with-eval-after-load "tex-mode"
+    (dolist (symb
+             '(("\\colon" . ?:)
+               ("\\mathbb{C}" . ?ℂ)
+               ("\\mathbb{K}" . ?𝕂)))
+      (add-to-list 'tex--prettify-symbols-alist symb))))
+
 (use-package latex
   :hook
   ((LaTeX-mode . turn-on-reftex)
    (LaTeX-mode . variable-pitch-mode)
-   (ConTeXt-mode . prettify-symbols-mode)
-   (ConTeXt-mode . LaTeX-math-mode)
    (LaTeX-mode . prettify-symbols-mode)
    (LaTeX-mode . TeX-source-correlate-mode)
    (LaTeX-mode . LaTeX-math-mode))
@@ -183,11 +246,10 @@
   (TeX-PDF-mode t)
   (TeX-save-query nil)
   (LaTeX-electric-left-right-brace t)
-  (ConTeXt-Mark-version "IV")
   (TeX-auto-save t)
   (TeX-debug-bad-boxes t)
   (TeX-debug-warnings t)
-  (TeX-electric-math '("$" . "$"))
+  (TeX-electric-math '("\(" . "\)"))
   (TeX-electric-sub-and-superscript t)
   (reftex-plug-into-AUCTeX t)
   (LaTeX-math-list
