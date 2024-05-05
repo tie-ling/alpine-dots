@@ -198,6 +198,8 @@
   ;; Let AUCTeX detect math environments
   (texmathp-tex-commands '(("\\startformula" sw-on) ("\\stopformula" sw-off)))
 
+  (LaTeX-electric-left-right-brace t)
+
   (TeX-view-program-selection '((output-pdf "Zathura")))
   (TeX-save-query nil)
   (TeX-auto-save t)
