@@ -189,25 +189,45 @@
 
    ;; shortcuts for symbols
    (ConTeXt-mode . LaTeX-math-mode))
+
   :custom
   ;; AUCTeX defaults to mkii; change to iv for iv and lmtx
   (ConTeXt-Mark-version "IV")
 
-  (prettify-symbols-unprettify-at-point nil)
-
-  ;; Let AUCTeX detect math environments
-  (texmathp-tex-commands '(("\\startformula" sw-on) ("\\stopformula" sw-off)))
-
+  ;; Enable electric left right brace
   (LaTeX-electric-left-right-brace t)
 
+  ;; Do not unprettify symbol at point
+  (prettify-symbols-unprettify-at-point nil)
+
+  ;; Let AUCTeX properly detect formula environment as math mode
+  (texmathp-tex-commands '(("\\startformula" sw-on) ("\\stopformula" sw-off)))
+
+  ;; Set PDF viewer
   (TeX-view-program-selection '((output-pdf "Zathura")))
+
+  ;; Don't as for permission, just save all files
   (TeX-save-query nil)
+
+  ;; Auto-save
   (TeX-auto-save t)
+
+  ;; Debug bad boxes and warnings after compilation via
+  ;; C-c ` key
   (TeX-debug-bad-boxes t)
   (TeX-debug-warnings t)
+
+  ;; Electric inline math,
   (TeX-electric-math '("$" . "$"))
+
+  ;; Electric sub and superscript, inserts {} after ^ and _
+  ;; such as a^{}.
   (TeX-electric-sub-and-superscript t)
+
+  ;; RefTex
   (reftex-plug-into-AUCTeX t)
+
+  ;; Customize keyboard shortcuts for TeX math macros
   (LaTeX-math-list
    '(("o r" "mathbb{R}" nil nil)
      ("o Q" "qquad" nil nil)
@@ -215,15 +235,19 @@
      ("o n" "mathbb{N}" nil nil)
      (?= "coloneq" nil nil)
      ("o c" "mathbb{C}" nil nil)))
+
   :bind
-  (:map TeX-mode-map
-        ("<f8>" . TeX-command-run-all))
+  ;; Electric \left(\right) \left[\right] \left\{\right\}
+  ;; only left brace; there is no right electric brace function
   (:map ConTeXt-mode-map ("(" . LaTeX-insert-left-brace))
   (:map ConTeXt-mode-map ("[" . LaTeX-insert-left-brace))
   (:map ConTeXt-mode-map ("{" . LaTeX-insert-left-brace))
+
   :config
   (add-hook 'TeX-after-compilation-finished-functions
             #'TeX-revert-document-buffer)
+
+  ;; Prettify symbols mode, customizable.
   (with-eval-after-load "tex-mode"
     (dolist (symb
              '(("\\colon" . ?:)
