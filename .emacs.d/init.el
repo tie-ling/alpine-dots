@@ -164,106 +164,17 @@
   :hook
   ((text-mode . variable-pitch-mode)))
 
-;; AUCTeX has good support for LaTeX out-of-the-box. For ConTeXt, not
-;; so much.
-;;
-;; Fortunately much of the functionality, in particular
-;; LaTeX-math-mode can be reused as-is in ConTeXt mode.
-;; LaTeX-math-mode is a minor mode with easy access to TeX math
-;; macros.  Such as ` a for \alpha.  You can define custom shortcuts
-;; via LaTeX-math-list as well.
-;;
-;; The key is to tweak texmathp-tex-commands for recognizing math
-;; environment in a ConTeXt document, or else LaTeX-math will not
-;; work.
-
-(use-package context
-  :hook
-  ((ConTeXt-mode . turn-on-reftex)
-
-   ;; personal preference
-   (ConTeXt-mode . variable-pitch-mode)
-
-   ;; show \alpha as α and \mathbb{R} as ℝ
-   (ConTeXt-mode . prettify-symbols-mode)
-
-   ;; shortcuts for symbols
-   (ConTeXt-mode . LaTeX-math-mode))
-
-  :custom
-  ;; AUCTeX defaults to mkii; change to iv for iv and lmtx
-  (ConTeXt-Mark-version "IV")
-
-  ;; Enable electric left right brace
-  (LaTeX-electric-left-right-brace t)
-
-  ;; Do not unprettify symbol at point
-  (prettify-symbols-unprettify-at-point nil)
-
-  ;; Let AUCTeX properly detect formula environment as math mode
-  (texmathp-tex-commands '(("\\startformula" sw-on) ("\\stopformula" sw-off)))
-
-  ;; Set PDF viewer
-  (TeX-view-program-selection '((output-pdf "Zathura")))
-
-  ;; Don't as for permission, just save all files
-  (TeX-save-query nil)
-
-  ;; Auto-save
-  (TeX-auto-save t)
-
-  ;; Debug bad boxes and warnings after compilation via
-  ;; C-c ` key
-  (TeX-debug-bad-boxes t)
-  (TeX-debug-warnings t)
-
-  ;; Electric inline math,
-  (TeX-electric-math '("$" . "$"))
-
-  ;; Electric sub and superscript, inserts {} after ^ and _
-  ;; such as a^{}.
-  (TeX-electric-sub-and-superscript t)
-
-  ;; RefTex
-  (reftex-plug-into-AUCTeX t)
-
-  ;; Customize keyboard shortcuts for TeX math macros
-  (LaTeX-math-list
-   '(("o r" "mathbb{R}" nil nil)
-     ("o Q" "qquad" nil nil)
-     ("o q" "quad" nil nil)
-     ("o n" "mathbb{N}" nil nil)
-     (?= "coloneq" nil nil)
-     ("o c" "mathbb{C}" nil nil)))
-
-  :bind
-  ;; Electric \left(\right) \left[\right] \left\{\right\}
-  ;; only left brace; there is no right electric brace function
-  (:map ConTeXt-mode-map ("(" . LaTeX-insert-left-brace))
-  (:map ConTeXt-mode-map ("[" . LaTeX-insert-left-brace))
-  (:map ConTeXt-mode-map ("{" . LaTeX-insert-left-brace))
-
-  :config
-  (add-hook 'TeX-after-compilation-finished-functions
-            #'TeX-revert-document-buffer)
-
-  ;; Prettify symbols mode, customizable.
-  (with-eval-after-load "tex-mode"
-    (dolist (symb
-             '(("\\colon" . ?:)
-               ("\\mathbb{C}" . ?ℂ)
-               ("\\mathbb{K}" . ?𝕂)))
-      (add-to-list 'tex--prettify-symbols-alist symb))))
-
 (use-package latex
   :hook
   ((LaTeX-mode . turn-on-reftex)
    (LaTeX-mode . variable-pitch-mode)
    (LaTeX-mode . prettify-symbols-mode)
+   (LaTeX-mode . TeX-source-correlate-mode)
    (LaTeX-mode . LaTeX-math-mode))
   :custom
   (prettify-symbols-unprettify-at-point nil)
   (TeX-engine 'luatex)
+  (TeX-source-correlate-start-server t)
   (TeX-PDF-from-DVI nil)
   (TeX-view-program-selection '((output-pdf "Zathura")))
   (TeX-PDF-mode t)
@@ -272,7 +183,7 @@
   (TeX-auto-save t)
   (TeX-debug-bad-boxes t)
   (TeX-debug-warnings t)
-  (TeX-electric-math '("$" . "$"))
+  (TeX-electric-math '("\\(" . "\\)"))
   (TeX-electric-sub-and-superscript t)
   (reftex-plug-into-AUCTeX t)
   (LaTeX-math-list
@@ -282,6 +193,13 @@
      ("o n" "mathbb{N}" nil nil)
      (?= "coloneq" nil nil)
      ("o c" "mathbb{C}" nil nil)))
+  (ispell-tex-skip-alists
+   (list
+    (append
+     (car ispell-tex-skip-alists)
+     ;; https://emacs.stackexchange.com/a/19650
+     '(("\\\\[[]" . "\\\\[]]")))
+    (cadr ispell-tex-skip-alists)))
   :bind
   (:map TeX-mode-map
         ("<f8>" . TeX-command-run-all))
@@ -290,7 +208,9 @@
             #'TeX-revert-document-buffer)
   (with-eval-after-load "tex-mode"
     (dolist (symb
-             '(("\\colon" . ?:)
+             '(("\\(" . ?⌜)
+               ("\\)" . ?⌟)
+               ("\\colon" . ?:)
                ("\\mathbb{C}" . ?ℂ)
                ("\\mathbb{K}" . ?𝕂)))
       (add-to-list 'tex--prettify-symbols-alist symb))))
