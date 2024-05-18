@@ -19,25 +19,3 @@ Patterns * !"[Gmail]/All Mail"
 Create Near
 Far :gmail-remote:
 Near :gmail-local:
-
-IMAPAccount posteo
-CertificateFile /etc/ssl/certs/ca-certificates.crt
-Host posteo.de
-PassCmd "gpg --decrypt /home/yc/.password-store/email/posteo.gpg 2>/dev/null"
-Port 993
-SSLType IMAPS
-User yguo@posteo.net
-
-IMAPStore posteo-remote
-Account posteo
-
-MaildirStore posteo-local
-Path /home/yc/Mail/posteo/
-Inbox /home/yc/Mail/posteo/Inbox
-SubFolders Verbatim
-
-Channel posteo-group-all
-Patterns *
-Create Near
-Far :posteo-remote:
-Near :posteo-local:
