@@ -130,21 +130,6 @@
               (mu4e-drafts-folder . "/gmail/[Gmail]/Drafts/")
               (mu4e-trash-folder . "/gmail/[Gmail]/Trash/")
               (mu4e-refile-folder . "/gmail/[Gmail]/Important/")
-              (mu4e-compose-signature . (concat "Yuchen Guo\n"))))
-          ,(make-mu4e-context
-            :name "posteo"
-            :match-func
-            (lambda (msg)
-              (when msg
-                (string-prefix-p "/posteo" (mu4e-message-field msg :maildir))))
-            :vars
-            '((user-mail-address . "yguo@posteo.net")
-              (user-full-name . "Yuchen Guo")
-              (message-user-organization . "Tieling")
-              (mu4e-sent-folder . "/posteo/Sent/")
-              (mu4e-drafts-folder . "/posteo/Drafts/")
-              (mu4e-trash-folder . "/posteo/Trash/")
-              (mu4e-refile-folder . "/posteo/Notes/")
               (mu4e-compose-signature . (concat "Yuchen Guo\n"))))))
   :custom
   (mu4e-context-policy 'pick-first)
